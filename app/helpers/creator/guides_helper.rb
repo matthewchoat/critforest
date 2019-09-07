@@ -1,0 +1,2 @@
+module Creator::GuidesHelper
+end

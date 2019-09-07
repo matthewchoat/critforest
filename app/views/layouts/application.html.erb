@@ -12,6 +12,8 @@
 
   <body>
 
+    <div id="flex-content-container">
+
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,13 +32,31 @@
             <a class="nav-link" href="#">Walkthroughs</a>
           </li>
         </ul>
+        <ul class="navbar-nav">
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+        <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+
       </div>
     </nav>
-    
+
       <% if notice.present? %>
         <p class="alert alert-info"><%= notice %></p>
       <% end %>
@@ -44,6 +64,53 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-3">
+            <h5>Creators</h5>
+            <%= link_to 'Make a Guide!', new_creator_guide_path %>
+            <br />
+            <%= link_to 'My Dashboard', root_path %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <h5>About</h5>
+            <%= link_to 'Team', root_path %>
+            <br />
+            <%= link_to 'Careers', root_path %>
+            <br />
+            <%= link_to 'Privacy Policy', root_path %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <h5>Contact</h5>
+            crit-forest-admin@gmail.com
+            <br />
+
+            <br />
+            Dallas, TX
+          </div>
+          <div class="col-12 col-sm-3 social">
+            <h5>Social</h5>
+              <br />
+              <br />
+              <%= link_to 'http://github.com' do %>
+                <span class="fa fa-github-square fa-2x social-button"></span>
+              <% end %>
+              <%= link_to 'http://facebook.com' do %>
+                <span class="fa fa-facebook-square fa-2x social-button"></span>
+              <% end %>
+              <%= link_to 'http://twitter.com' do %>
+                <span class="fa fa-twitter-square fa-2x social-button"></span>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>  
   </body>
 </html>

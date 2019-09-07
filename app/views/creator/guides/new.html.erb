@@ -1,0 +1,13 @@
+<br />
+<div class="booyah-box col-10 offset-1">
+  <h1>Add a new guide</h1>
+    <%= simple_form_for @guide, url: creator_guides_path do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :platform %>
+    <br />
+    <%= f.submit "Create", class: 'btn btn-primary' %>
+    <br />
+  <% end %>
+  <br />
+</div>

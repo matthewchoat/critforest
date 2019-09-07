@@ -5,14 +5,16 @@
   <hr />
 
   <% @guides.each do |guide| %>
-    <h2 class="text-center"><%= guide.title %></h2>
+      <h2 class="text-center">
+      <%= link_to guide.title, guide_path(guide) %>
+    </h2>
     <br />
     <div class="row">
      <div class="col-sm-8 col-12">
       <%= guide.description %>
     </div>
     <div class="col-sm-4 col-12 text-center">
-      <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
+      <%= link_to 'View Guide...', guide_path(guide), class: 'btn btn-primary btn-large' %>
     </div>
     </div>
    <br class="clr" />

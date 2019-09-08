@@ -1,0 +1,2 @@
+module Creator::SectionsHelper
+end

@@ -15,10 +15,15 @@ class Creator::GuidesController < ApplicationController
   end
 
   def show
-    @guide = Guide.find(params[:id])
+    @section = Section.new
   end
 
   private
+
+  helper_method :current_guide
+    def current_guide
+      @current_guide ||= Guide.find(params[:id])
+    end
 
   def guide_params
     params.require(:guide).permit(:title, :description, :platform)

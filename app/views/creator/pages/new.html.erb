@@ -1,0 +1,13 @@
+<br />
+<div class="booyah-box col-10 offset-1">
+  <h1>Add a new page</h1>
+  <%= simple_form_for @page, url: creator_section_pages_path(current_section) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :subtitle %>
+
+    <br />
+    <%= f.submit "Add the Page", class: 'btn btn-primary' %>
+    <br />
+    <br />
+  <% end %>
+</div>

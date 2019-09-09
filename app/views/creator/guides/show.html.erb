@@ -13,6 +13,17 @@
     <% current_guide.sections.each do |section| %>
       <li>
         <%= section.title %>
+        <%= link_to 'New Page', new_creator_section_page_path(section), class: 'float-right btn btn-primary btn-sm' %>
+      <ul>
+          <% section.pages.each do |page| %>
+            <li>
+              <b><%= page.title %></b>
+              -
+              <%= page.subtitle %>
+            </li>
+          <% end %>
+        </ul>
+        <br class="clr" />
       </li>
     <% end %>
   </ul>

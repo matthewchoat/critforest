@@ -1,24 +1,7 @@
-# README
+<h1>Crit-Forest </h1>
+<h2> User-Created Gaming News, Reviews, and Walkthroughs </h2>
+Crit-Forest is a two-sided, video-streaming application that allows users to create their own content related to gaming. Users can submit in-depth reviews, previews, walkthroughs, or news using text, images, and even streaming video.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="https://imgur.com/a/o4CFcS4" />
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+View the Heroku deploy of this applicaion and begin creating your own gaming content here: https://critforest.herokuapp.com/
